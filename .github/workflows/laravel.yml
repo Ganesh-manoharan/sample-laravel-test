@@ -8,14 +8,12 @@ on:
 
 jobs:
   laravel-tests:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
     - name: change path
       run: |
         cd /githubaction/sample-laravel-test/
         mkdir final
-  build:
-    runs-on: ubuntu-latest
     steps:
       - id: latest
         uses: thebritican/fetch-latest-release@v1.0.3
