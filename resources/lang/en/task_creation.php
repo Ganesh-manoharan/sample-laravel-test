@@ -1,0 +1,88 @@
+<?php
+
+return [
+
+    'Taskcreation_stepone'=>[
+            'Title'=>'Task Creation - Step One',
+            'Task Name'=>'Task Name',
+            'Task Description'=>'Task Description',
+            'Task Due Date'=>'Task Due Date',
+            'Task Timing & Frequency'=>'Task Timing & Frequency',
+            'Frequency'=>'Frequency',
+            'Dependencies'=>'Dependencies',
+            'Choose Dependency'=> 'Choose Dependency',
+            'Clients'=>'Clients',
+            'All Clients'=>'All Clients',
+            'Choose Clients'=>'Choose Clients',
+            'Choose Fund Group'=>'Choose Fund Group',
+            'Choose Sub Fund'=>'Choose Sub Fund',
+            'Assigned To'=>'Assigned To',
+            'Departments'=>'Departments',
+            'All Departments'=>'All Departments',
+            'Choose Regulatory Grouping'=>'Choose Regulatory Grouping',
+            'Choose Users'=>'Choose Users',
+            'Choose Review Users'=>'Choose Review Users',
+            'All Users'=>'All Users',
+            'All Funds'=>'All Funds',
+            'All Sub Funds'=>'All SubFunds',
+            'All Dependencies'=>'All Dependencies',
+    ],
+    'Taskcreation_steptwo'=>[
+        'Title'=>'Task Creation - Step Two',
+        'Attach Documentation'=>'Link Task to Document',
+        'Additional Attachments'=>'Is assignee required to attach a document?',
+        'Choose Doc Type'=>'Choose Doc Type',
+        'Search'=>'Search',
+        'Keyword Search'=>'Keyword Search',
+        'Required'=>'Required',
+        'Optional'=>'Optional',
+        'Not Required'=>'Not Required',
+        'Add Comments'=>'Provide guidance on document for assignee',
+        'Add comment here'=>'Add comment here',
+        'All or Selection'=>'All or Selection',
+        'Yes'=>'Yes',
+        'No'=>'No',
+        'MIS'=>'Further Information Options',
+        'Commentary Requirement'=>'Commentary Requirement',
+        'MIS Requirement'=>'MIS Requirement',
+        'Further Information Options'=>'Further Information Options',
+        'MIS definition'=>'MIS definition', 
+        'Previous' =>'Previous',
+        'Next'=>'Next',
+        'Submit'=>'Save',
+        'Fields'=>'Fields',
+        'Text'=>'Text',
+        'Number'=>'Number',
+        'Dropdown'=>'Dropdown',
+        'Questionary'=>'Questionnaire'
+    ],
+    'Taskdetails_attachdocumentation_modal'=>[
+        'Document Name'=>'Document Name',
+        'Document Name Title'=>'Central Bank (Supervision and Enforcement) Act 2013 (Section 48)',
+        'Document Type'=>'Document Type',
+        'Business Plan'=>'Business Plan',
+        'Document Message'=>'Please select what pages you would like to attach by highlighting to the right. When you are finished press complete.',
+        'Delete'=>'Delete',
+        'Cancel'=>'Cancel',
+        'Save'=>'Save'
+   ],
+     
+    'Taskdetails_popup'=>[
+        'Title'=>'Task Details',
+        'Created By'=>'Created By',
+        'Assigned to'=>'Assigned to',
+        'Created'=>'Created',
+        'Deadline'=>'Deadline',
+        'Client Name'=>'Client Name',
+        'Frequency'=>'Frequency',
+        'Fund Group'=>'Fund Group',
+        'Attached'=>'Attached',
+        'Cancel'=>'Cancel',
+        'Save'=>'Save',
+        'Complete' => 'Complete',
+        'This task has been approved'=>'This task has been approved',
+        'This task has been created'=>'This task has been created'
+     ]
+];
+
+?>
