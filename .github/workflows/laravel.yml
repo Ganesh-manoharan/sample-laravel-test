@@ -11,5 +11,7 @@ jobs:
     runs-on: self-hosted
     steps:
     - name: change path
-      run: mkdir final
-
+      run: |
+       cd /githubaction/sample-laravel-test
+       touch final-test.txt
+       
