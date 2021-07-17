@@ -14,3 +14,8 @@ jobs:
       run: |
         cd /githubaction/sample-laravel-test/
         mkdir jai
+    - name: Tag
+      id: autotagger
+      uses: butlerlogic/action-autotag@stable
+      with:
+        GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
