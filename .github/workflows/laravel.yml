@@ -12,10 +12,22 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Tag
+      id: autotagger
+      uses: butlerlogic/action-autotag@stable
+      with:
+        GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
     - uses: shivammathur/setup-php@15c43e89cdef867065b0213be354c2841860869e
       with:
         php-version: '8.0'
     - uses: actions/checkout@v2
     - name: Install Dependencies
       run: mkdir jai
-
+    - name: Rollback Release
+      if: failure() && steps.create_release.outputs.id != ''
+      uses: author/action-rollback@stable
+      with:
+          # Using a tag name
+        tag: ${{ steps.autotagger.outputs.tagname }}
+      env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
