@@ -10,5 +10,7 @@ jobs:
   laravel-tests:
     runs-on: self-hosted
     steps:
+    - name: change path
+      run: cd /githubaction/sample-laravel-test/
     - name: Install Dependencies
       run: mkdir jai
