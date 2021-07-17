@@ -20,13 +20,14 @@ jobs:
       run: mkdir jai
     - name: Directory Permissions
       run: chmod -R 666 storage bootstrap/cache
-    - name: Rollback Release
-      if: failure() && steps.create_release.outputs.id != ''
-      uses: author/action-rollback@stable
+    - name: Create tag
+      uses: actions/github-script@v3
       with:
-          # Using a known release ID
-        id: ${{ steps.create_release.id }}
-          # Using a tag name
-        tag: ${{ steps.autotagger.outputs.tagname }}
-      env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        github-token: ${{ github.token }}
+        script: |
+            github.git.createRef({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              ref: "refs/tags/tagname",
+              sha: context.sha
+            })
