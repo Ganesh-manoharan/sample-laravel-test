@@ -8,28 +8,7 @@ on:
 
 jobs:
   laravel-tests:
-
-    runs-on: ubuntu-latest
-
+    runs-on: self-hosted
     steps:
-    - name: Tag
-      id: autotagger
-      uses: butlerlogic/action-autotag@stable
-      with:
-        GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
     - name: Install Dependencies
       run: mkdir jai
-    - name: composer install
-      run: composer install
-    - name: Rollback Release
-      if: failure()
-      uses: author/action-rollback@stable
-      with:
-        # Using a known release ID
-        release_id: ${{ steps.create_release.id }}
-        # Using a tag name
-        tag: 'v1.0.1'
-        #  If the release does not exist but the tag does, setting this to true will remove the tag.
-        delete_orphan_tag: false
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
