@@ -19,7 +19,7 @@ jobs:
     - name: Install Dependencies
       run: mkdir jai
     - name: Directory Permissions
-      run: chmod -R 777 storage bootstrap/cache
+      run: chmod -R 666 storage bootstrap/cache
     - name: Rollback Release
       if: failure() && steps.create_release.outputs.id != ''
       uses: author/action-rollback@stable
