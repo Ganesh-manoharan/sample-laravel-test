@@ -15,7 +15,7 @@ jobs:
         cd /githubaction/sample-laravel-test/
         mkdir final
   build:
-    runs-on: ubuntu-latest
+
     - name: Bump version and push tag
       steps:
     - uses: anothrNick/github-tag-action@1.26.0
