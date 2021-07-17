@@ -14,13 +14,19 @@ jobs:
       run: |
         cd /githubaction/sample-laravel-test/
         mkdir final
+  build:
+    runs-on: ubuntu-latest
+    - name: Bump version and push tag
+      if: ${{ github.event_name == 'push' }}
+      uses: anothrNick/github-tag-action@1.26.0
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        WITH_V: true
     - name: Rollback Release
-      if: failure()
+      if: failure() && steps.create_release.outputs.id != ''
       uses: author/action-rollback@stable
       with:
-        # Using a known release ID
-        release_id: ${{ steps.create_release.id }}
         # Using a tag name
-        tag: '1.0.0'
-     env:
-       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        tag: ${{ github.event_name }}
+      env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
