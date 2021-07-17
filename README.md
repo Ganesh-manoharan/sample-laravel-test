@@ -1,1 +1,1 @@
-# sample-laravel-test-final-1234
+# sample-laravel-test-final
