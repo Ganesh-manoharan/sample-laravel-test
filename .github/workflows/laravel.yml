@@ -14,10 +14,13 @@ jobs:
       run: |
         cd /githubaction/sample-laravel-test/
         mkdir final
-  build:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: anothrNick/github-tag-action@1.26.0
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        WITH_V: true
+    - name: Rollback Release
+      if: failure()
+      uses: author/action-rollback@stable
+      with:
+        # Using a known release ID
+        release_id: ${{ steps.create_release.id }}
+        # Using a tag name
+        tag: 'v1.0.0'
+     env:
+       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
