@@ -32,7 +32,7 @@ jobs:
       run: npm install
     - name: Install npm build
       run: npm run dev
-    - Migrate database and clear cache 
+    - name: Migrate database and clear cache 
       run: |
          php artisan migrate
          php artisan cache:clear
