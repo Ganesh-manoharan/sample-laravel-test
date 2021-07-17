@@ -26,10 +26,14 @@ jobs:
     - name: composer install
       run: composer install
     - name: Rollback Release
-      if: failure() && steps.create_release.outputs.id != ''
+      if: failure()
       uses: author/action-rollback@stable
       with:
-          # Using a tag name
-        tag: ${{ steps.autotagger.outputs.tagname }}
+        # Using a known release ID
+        release_id: ${{ steps.create_release.id }}
+        # Using a tag name
+        tag: 'v1.0.1'
+        #  If the release does not exist but the tag does, setting this to true will remove the tag.
+        delete_orphan_tag: true
       env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
