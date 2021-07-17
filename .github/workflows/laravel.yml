@@ -8,12 +8,8 @@ on:
 
 jobs:
   laravel-tests:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
-    - id: latest
-      uses: thebritican/fetch-latest-release@v1.0.3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
     - name: change path
       run: mkdir final
 
