@@ -15,7 +15,5 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
     - name: change path
-      run: |
-        cd /githubaction/sample-laravel-test/
-        mkdir final
+      run: mkdir final
 
