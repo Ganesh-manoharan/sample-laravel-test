@@ -21,6 +21,6 @@ jobs:
         # Using a known release ID
         release_id: ${{ steps.create_release.id }}
         # Using a tag name
-        tag: 'v1.0.0'
+        tag: '1.0.0'
      env:
        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
