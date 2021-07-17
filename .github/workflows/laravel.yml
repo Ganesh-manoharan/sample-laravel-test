@@ -13,5 +13,6 @@ jobs:
     - name: change path
       run: |
        cd /githubaction/sample-laravel-test
-       touch final-test.txt
+       touch first-test.txt
+       
        
