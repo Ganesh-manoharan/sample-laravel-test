@@ -17,10 +17,6 @@ jobs:
       uses: butlerlogic/action-autotag@stable
       with:
         GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-    - uses: shivammathur/setup-php@15c43e89cdef867065b0213be354c2841860869e
-      with:
-        php-version: '8.0'
-    - uses: actions/checkout@v2
     - name: Install Dependencies
       run: mkdir jai
     - name: composer install
@@ -34,6 +30,6 @@ jobs:
         # Using a tag name
         tag: 'v1.0.1'
         #  If the release does not exist but the tag does, setting this to true will remove the tag.
-        delete_orphan_tag: true
+        delete_orphan_tag: false
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
