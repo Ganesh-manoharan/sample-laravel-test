@@ -13,7 +13,7 @@ jobs:
     - name: change path
       run: |
         cd /githubaction/sample-laravel-test/
-        mkdir jai
+        mkdir output
   build:
     runs-on: ubuntu-latest
     steps:
