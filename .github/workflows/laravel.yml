@@ -14,7 +14,6 @@ jobs:
       run: |
         cd /githubaction/sample-laravel-test/
         mkdir final
-    steps:
       - id: latest
         uses: thebritican/fetch-latest-release@v1.0.3
         with:
