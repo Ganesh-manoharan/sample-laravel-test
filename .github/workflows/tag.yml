@@ -1,5 +1,5 @@
-- name: Bump version
-  on:
+name: Bump version
+on:
   push:
     branches:
       - main
