@@ -1,19 +1,43 @@
-name: Laravel
+# This is a basic workflow to help you get started with Actions
 
+name: CD
+
+# Controls when the action will run. 
 on:
+  # Triggers the workflow on push or pull request events but only for the Master branch
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
 
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  laravel-tests:
+  deploy:
     runs-on: self-hosted
     steps:
-    - name: change path
+    - uses: actions/checkout@v2
+      with:
+        token: ${{ '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' }}
+    - name: Commit built assets
       run: |
-       cd /githubaction/sample-laravel-test
-       git pull
-       touch first-test.txt
+        git config --local user.email "praveenkumar.r@perfutil.com"
+        git config --local user.name "Praveenperfutil@22"
+        git checkout -B Dev
+    - name: composer installtion
+      run: |
+        git pull
+        composer install
+    - name: Install npm packages
+      run: npm install
+    - name: Install npm build
+      run: npm run dev
+    - Migrate database and clear cache 
+      run: |
+         php artisan migrate
+         php artisan cache:clear
+         php artisan view:clear
+         php artisan config:clear
+         php artisan route:clear
        
        
